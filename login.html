@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', Arial, sans-serif;
+      height: 100vh;
+      background: #181818;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      display: flex;
+      width: 900px;
+      height: 600px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #181818;
+    }
+    .left {
+      position: relative;
+      width: 50%;
+      height: 100%;
+      background: url('C:\Users\sruthialex\Downloads\a-man-in-hilltop.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(30, 174, 255, 0.3);
+      z-index: 1;
+    }
+    .quote {
+      position: absolute;
+      top: 30%;
+      left: 10%;
+      right: 10%;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 8px #000;
+      z-index: 2;
+      text-align: center;
+    }
+    .right {
+      width: 50%;
+      background: linear-gradient(135deg, #0d1d2d 0%, #1e1e1e 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 30px;
+    }
+    .login-title {
+      color: #fff;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+    }
+    .login-form {
+      width: 100%;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .login-form label {
+      color: #fff;
+      margin-bottom: 5px;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px 8px;
+      border: none;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      font-size: 1rem;
+      outline: none;
+      margin-bottom: 10px;
+    }
+    .login-form input[type="text"]::placeholder,
+    .login-form input[type="password"]::placeholder {
+      color: #ccc;
+      opacity: 1;
+    }
+    .login-form .forgot {
+      text-align: right;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+    .login-form .forgot a {
+      color: #b0d8ff;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .login-form .forgot a:hover {
+      color: #fff;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 12px 0;
+      border: none;
+      border-radius: 24px;
+      background: #fff;
+      color: #002b49;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 10px;
+    }
+    .login-form button:hover {
+      background: #1eaeff;
+      color: #fff;
+    }
+    .create-account {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.create-account span {
+  margin-right: 6px;
+}
+
+.create-account a {
+  color: #1eaeff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.create-account a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="overlay">
+        <div>
+          <img src="/side.jpeg" alt=" image " width= 450px height=600px>
+        </div>
+      </div>
+      <div class="quote">
+        TRAVEL IS THE ONLY THING YOU BUY BUT THAT MAKE YOU RICHER...
+      </div>
+    </div>
+    <div class="right">
+      <div class="login-title">Login Page</div>
+      <form class="login-form">
+        <label for="email/username">Email id/username</label>
+        <input type="text" id="email/username" placeholder="Enter your email/username">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+        <div class="forgot">
+          <a href="/reset.html">Forgot Your Password?</a>
+        </div>
+        <button type="submit">Enter</button>
+        <div class="create-account">
+          <span>New here?</span> 
+          <a href="/registerpage.html">Create an account</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>
+</html>
