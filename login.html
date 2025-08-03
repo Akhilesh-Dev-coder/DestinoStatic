@@ -12,35 +12,41 @@
       padding: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       height: 100vh;
-      background: #181818;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #181818 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    
     .container {
       display: flex;
       width: 900px;
       height: 600px;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      box-shadow: 
+        0 8px 32px 0 rgba(31, 38, 135, 0.37),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
       border-radius: 16px;
       overflow: hidden;
-      background: #181818;
+      background: linear-gradient(135deg, #181818 0%, #1f1f1f 100%);
     }
+    
     .left {
       position: relative;
       width: 50%;
       height: 100%;
-      background: url('C:\Users\sruthialex\Downloads\a-man-in-hilltop.jpg') center center/cover no-repeat;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3d6bb3 100%);
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    
     .overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(30, 174, 255, 0.3);
+      background: linear-gradient(135deg, rgba(30, 174, 255, 0.4) 0%, rgba(30, 174, 255, 0.2) 100%);
       z-index: 1;
     }
+    
     .quote {
       position: absolute;
       top: 30%;
@@ -49,25 +55,42 @@
       color: #fff;
       font-size: 1.3rem;
       font-weight: bold;
-      text-shadow: 2px 2px 8px #000;
+      text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(30, 174, 255, 0.3);
       z-index: 2;
       text-align: center;
     }
+    
     .right {
       width: 50%;
-      background: linear-gradient(135deg, #0d1d2d 0%, #1e1e1e 100%);
+      background: linear-gradient(135deg, #0d1d2d 0%, #1e1e1e 50%, #252525 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 40px 30px;
+      position: relative;
     }
+    
+    .right::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, rgba(30, 174, 255, 0.5), transparent);
+    }
+    
     .login-title {
       color: #fff;
       font-size: 2rem;
       margin-bottom: 40px;
       letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(30, 174, 255, 0.2);
     }
+    
     .login-form {
       width: 100%;
       max-width: 320px;
@@ -75,83 +98,108 @@
       flex-direction: column;
       gap: 20px;
     }
+    
     .login-form label {
-      color: #fff;
+      color: #f0f8ff;
       margin-bottom: 5px;
       font-size: 1rem;
       font-weight: 500;
     }
+    
     .login-form input[type="text"],
     .login-form input[type="password"] {
       width: 100%;
       padding: 10px 8px;
       border: none;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
       background: transparent;
       color: #fff;
       font-size: 1rem;
       outline: none;
       margin-bottom: 10px;
+      transition: border-color 0.2s ease;
     }
+    
     .login-form input[type="text"]::placeholder,
     .login-form input[type="password"]::placeholder {
-      color: #ccc;
+      color: rgba(204, 204, 204, 0.7);
       opacity: 1;
     }
+    
+    .login-form input[type="text"]:focus,
+    .login-form input[type="password"]:focus {
+      border-bottom-color: #1eaeff;
+      box-shadow: 0 1px 0 0 #1eaeff;
+    }
+    
     .login-form .forgot {
       text-align: right;
       margin-top: -8px;
       margin-bottom: 20px;
     }
+    
     .login-form .forgot a {
       color: #b0d8ff;
       font-size: 0.95rem;
       text-decoration: none;
       transition: color 0.2s;
     }
+    
     .login-form .forgot a:hover {
-      color: #fff;
+      color: #87ceeb;
+      text-decoration: underline;
     }
+    
     .login-form button {
       width: 100%;
       padding: 12px 0;
       border: none;
       border-radius: 24px;
-      background: #fff;
+      background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
       color: #002b49;
       font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s, color 0.2s;
+      transition: all 0.2s ease;
       margin-top: 10px;
+      box-shadow: 0 2px 10px rgba(30, 174, 255, 0.1);
     }
+    
     .login-form button:hover {
-      background: #1eaeff;
+      background: linear-gradient(135deg, #1eaeff 0%, #4db8ff 100%);
       color: #fff;
+      box-shadow: 0 4px 15px rgba(30, 174, 255, 0.3);
     }
+    
     .create-account {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.95rem;
-  color: #ccc;
-}
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #d3d3d3;
+    }
+    
+    .create-account span {
+      margin-right: 6px;
+    }
+    
+    .create-account a {
+      color: #1eaeff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    
+    .create-account a:hover {
+      color: #87ceeb;
+      text-decoration: underline;
+    }
 
-.create-account span {
-  margin-right: 6px;
-}
-
-.create-account a {
-  color: #1eaeff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.create-account a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
+    @media (max-width: 950px) {
+      .container { 
+        width: 96vw; 
+        padding: 15vw 3vw 13vw 3vw;
+      }
+    }
   </style>
 </head>
 <body>
