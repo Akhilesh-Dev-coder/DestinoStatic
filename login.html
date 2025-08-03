@@ -217,8 +217,9 @@
     <div class="right">
       <div class="login-title">Login Page</div>
       <form class="login-form">
-        <label for="email/username">Email id/username</label>
-        <input type="text" id="email/username" placeholder="Enter your email/username">
+        <label for="username">Email id/username</label>
+        <input type="text" id="username" placeholder="Enter your email/username">
+        <div id="username-error" style="color: red; font-size: 0.85rem; display: none;"></div>
         <label for="password">Password</label>
         <input type="password" id="password" placeholder="Enter your password">
         <div class="forgot">
@@ -233,5 +234,35 @@
       </form>
     </div>
   </div>
+  <script>
+  const usernameInput = document.getElementById('username');
+  const errorDiv = document.getElementById('username-error');
+  const form = document.querySelector('.login-form');
+
+  function validateUsername() {
+    const value = usernameInput.value.trim();
+    
+    // Allow alphanumeric but disallow all-number usernames
+    const isOnlyNumbers = /^[0-9]+$/.test(value);
+
+    if (value !== "" && isOnlyNumbers) {
+      errorDiv.textContent = "Username cannot be only numbers.";
+      errorDiv.style.display = "block";
+      return false;
+    } else {
+      errorDiv.textContent = "";
+      errorDiv.style.display = "none";
+      return true;
+    }
+  }
+
+  usernameInput.addEventListener('input', validateUsername);
+
+  form.addEventListener('submit', function(e) {
+    if (!validateUsername()) {
+      e.preventDefault(); // Prevent form submission
+    }
+  });
+</script>
 </body>
 </html>
